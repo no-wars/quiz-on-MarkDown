@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Quiz ფაილის გენერატორი</title>
+<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<h1>Quiz ფაილის გენერატორი</h1>
+
+<h3 style="margin-top:20px">დავაგენერიროთ ფაილი</h3>
+<div id="preview" class="preview">// შეავსეთ ველები</div>
+
+<div class="controls">
+  <button id="downloadBtn" class="btn-download">⬇ ცამოტვირთვა</button>
+</div>
+ <br>
+<div class="layout">
+  <div class="meta">
+    <label>ფაილის სახელი</label>
+    <input id="filename" type="text" value="quiz">
+
+    <label>რანდომიზაცია</label>
+    <input id="duration" type="text" placeholder="0  2m ან 1h" value="">
+
+    <label>Randomisation</label>
+    <select id="randomisation">
+      <option>off</option>
+      <option>on</option>
+    </select>
+
+    <label>Cover</label>
+    <input id="cover" type="text" value="../../images/cover.jpg">
+
+    <label>კატეგორიის ტიპი</label>
+    <select id="cattype">
+      <option>beginner</option>
+      <option>middle</option>
+      <option>high</option>
+    </select>
+
+ 
+    <input id="quizposition" type="number" min="1" value="1">
+  </div>
+
+  <div class="questions">
+    <button id="addQuestion" class="btn-add">➕ კითხვის დამატება</button>
+    <div id="questionsContainer"></div>
+  </div>
+</div>
+
+<script src="quiz.js"></script>
+
+
+</body>
+</html>
+

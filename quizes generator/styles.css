@@ -1,0 +1,21 @@
+  body{font-family:Inter,system-ui,Arial;max-width:1200px;margin:18px auto;padding:12px}
+  h1{margin-bottom:10px}
+  label{display:block;margin-top:8px;font-weight:600}
+  input[type=text],input[type=number],textarea,select{width:100%;box-sizing:border-box;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:6px}
+  .layout{display:flex;gap:16px;align-items:flex-start}
+  .meta,.questions{flex:1}
+  .meta{background:#fff8e6;padding:14px;border-radius:8px;border:1px solid #f1e6c8}
+  .question{border:1px solid #eee;padding:10px;border-radius:8px;margin-top:10px;background:#fafafa}
+  .question-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+  .question-body{margin-top:10px;display:none}
+  .question.open .question-body{display:block}
+  .answers-list{margin-top:6px}
+  .answer-item{display:flex;align-items:center;gap:8px;margin-top:4px}
+  .answer-item input[type=text]{flex:1}
+  .answer-item input[type=checkbox]{width:20px;height:20px}
+  button{padding:8px 12px;border-radius:8px;border:0;cursor:pointer}
+  .btn-add{background:#2b8aef;color:#fff}
+  .btn-remove{background:#ff6b6b;color:#fff}
+  .btn-download{background:#20bf6b;color:#fff}
+  .preview{white-space:pre-wrap;background:#111;color:#e6e6e6;padding:12px;border-radius:8px;margin-top:16px;overflow:auto;max-height:380px}
+  .controls{display:flex;gap:8px;margin-top:12px}

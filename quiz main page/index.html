@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz-ების სია</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="quizmain_style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container py-5 text-center">
+
+  <p class="subtitle mb-4">აირჩიეთ კატეგორია და სირთულე</p>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" class="form-control" placeholder="🔎 ძიება...">
+  </div>
+
+  <div class="row g-4 justify-content-center" id="dirContainer"></div>
+</div>
+
+<script src="dirconf.js"></script>
+<script src="dirconf.js"></script>
+<script>
+const container = document.getElementById('dirContainer');
+
+function renderDirs(list) {
+  container.innerHTML = '';
+  list.forEach(dir => {
+    if (!dir.name || !dir.icon) return;
+    if (dir.status === "hidden") return; 
+
+    const col = document.createElement('div');
+    col.classList.add('col-6','col-md-4','col-lg-3');
+
+    const iconHTML = `<img src="${dir.icon.src}" alt="${dir.name}">`;
+
+    const levelsHTML = dir.levels.map(level => 
+      `<a href="${level.link}" class="btn-level">${level.name}</a>`
+    ).join(' ');
+
+    col.innerHTML = `
+      <div class="card" style="background:${dir.color}">
+        <div class="icon-wrapper">${iconHTML}</div>
+        <h5>${dir.name}</h5>
+        <div>${levelsHTML}</div>
+      </div>
+    `;
+    container.appendChild(col);
+  });
+}
+
+
+renderDirs(dirConfig);
+
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  const query = e.target.value.toLowerCase();
+  const filtered = dirConfig.filter(dir => {
+    if (dir.status === "hidden") return false; 
+    const levelsMatch = dir.levels.some(lvl => lvl.name.toLowerCase().includes(query));
+    return dir.name.toLowerCase().includes(query) || levelsMatch;
+  });
+  renderDirs(filtered);
+});
+</script>
+
+</body>
+</html>
+
