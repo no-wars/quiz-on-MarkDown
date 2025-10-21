@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Linux-ის Quiz-ი რთული</title>
+<link rel="stylesheet" href="st.css">
+</head>
+<body>
+<header><h2 style="margin:0;text-align: center;">Linux-ის Quiz-ი რთული</h2></header>
+<div class="wrap">
+  <div class="layout">
+    <div class="left">
+      <div id="list"></div>
+    </div>
+
+    <div class="main">
+      <div id="lobby">
+        <div class="small">აირჩიეთ Quiz-ი სიიდან.</div>
+      </div>
+
+      <div id="runner" class="hidden">
+        <div class="meta" id="quizMeta"></div>
+
+        <div id="questionPanel">
+          <div class="q-title" id="qTitle"></div>
+          <div class="media" id="media"></div>
+          <div id="printHint" class="small" style="margin-top:6px;"></div>
+
+          <div id="options" class="options"></div>
+
+          <div class="controls">
+            <div class="center"><span class="small">დარჩენილი დრო:</span> <span id="timer" class="timer">—</span></div>
+            <div style="flex:1"></div>
+            <button id="nextBtn">შემდეგი →</button>
+            <button id="quitBtn" class="ghost">დახურვა</button>
+          </div>
+
+          <div id="feedback" class="result hidden"></div>
+        </div>
+
+        <div id="final" class="hidden">
+          <h3>შედეგი</h3>
+          <div id="scoreSummary" class="result"></div>
+          <div style="margin-top:8px">
+            <button id="retakeBtn">განმეორება</button>
+            <button id="backToListBtn" class="ghost">Quiz-ის გათიშვა</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="quizlist.js"></script>
+<script src="../../../../js/launcher_function.js"></script>
+</body>
+</html>
+
