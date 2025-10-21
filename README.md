@@ -46,9 +46,6 @@
 ---
 Duration: 10m           # Длительность: 10m, 5m 30s, 1h, или 0 (без таймера)
 Randomisation: on       # Перемешивание вопросов: on/off
-Cover: ../../images/cover.jpg  # Путь к обложке (опционально)
-CatType: beginner       # Категория (опционально)
-QuizPosition: 1         # Позиция в списке (опционально)
 ---
 ```
 
